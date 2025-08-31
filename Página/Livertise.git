@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Infecção Urinária</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #loader {
+      text-align: center;
+    }
+    #content {
+      display: none;
+      max-width: 900px;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .slide {
+      background: #fff;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #333;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+    .fonte {
+      font-size: 0.9em;
+      color: #555;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
 
+  <!-- Tela de espera -->
+  <div id="loader">
+    <h2>Aguarde <span id="timer">5</span> segundos...</h2>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div id="content">
+    <h1>Infecção Urinária</h1>
+    <p style="text-align:center;">Entenda como ela age, sintomas, tratamento e prevenção</p>
+
+    <div class="slide">
+      <h2>O que é Infecção Urinária?</h2>
+      <ul>
+        <li>Infecção causada por microrganismos no trato urinário</li>
+        <li>Pode afetar bexiga, uretra, ureteres e rins</li>
+        <li>Mais comum em mulheres</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <h2>Causas</h2>
+      <ul>
+        <li>Principalmente bactéria <em>Escherichia coli</em></li>
+        <li>Outros agentes: vírus, fungos</li>
+        <li>Fatores de risco: higiene, cateter, relações sexuais, obstruções</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <h2>Como a Infecção Urinária Age</h2>
+      <ul>
+        <li>Entrada das bactérias pela uretra</li>
+        <li>Multiplicação e colonização da mucosa</li>
+        <li>Inflamação e resposta imunológica</li>
+        <li>Possível subida da infecção para os rins (pielonefrite)</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <h2>Imagem ilustrativa</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Urinary_tract_infection.svg/1200px-Urinary_tract_infection.svg.png" alt="Infecção urinária - esquema do trato urinário">
+      <p class="fonte">Fonte: Wikimedia Commons</p>
+    </div>
+
+    <div class="slide">
+      <h2>Sintomas</h2>
+      <ul>
+        <li>Ardor ao urinar</li>
+        <li>Urgência e frequência aumentadas</li>
+        <li>Dor abdominal inferior</li>
+        <li>Urina turva ou com sangue</li>
+        <li>Febre (em casos graves)</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <h2>Diagnóstico e Tratamento</h2>
+      <ul>
+        <li>Exame de urina e urocultura</li>
+        <li>Antibióticos prescritos</li>
+        <li>Hidratação adequada</li>
+        <li>Higiene correta</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <h2>Prevenção</h2>
+      <ul>
+        <li>Beber bastante água</li>
+        <li>Urinar após relações sexuais</li>
+        <li>Higiene genital adequada</li>
+        <li>Evitar uso prolongado de cateteres</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    let timeLeft = 5;
+    let timer = document.getElementById("timer");
+    let loader = document.getElementById("loader");
+    let content = document.getElementById("content");
+
+    let countdown = setInterval(() => {
+      timeLeft--;
+      timer.textContent = timeLeft;
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        loader.style.display = "none";
+        content.style.display = "block";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
